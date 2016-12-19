@@ -1,0 +1,107 @@
+{% extends "base/base.html"%}
+{% load staticfiles %}
+{% block breadcrumb %}
+Current Page: <a href="/index">Home</a> &raquo;<a href="">Revenue</a> &raquo; 
+{% endblock %}
+{% block content %}
+
+<div class="col-sm-8">
+	<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-12" style="font-family:Times New Roman; background-color:rgb(250, 250, 250);">
+						<div class="results">
+						<table class="table table-responsive table hover" id="result_list">
+						<thead>
+						<tr>
+						<th scope="col"  class="sortable column-month">	     
+						   
+						   <div class="text">Month</div>
+						   <div class="clear"></div>
+						</th>
+						<th scope="col"  class="sortable column-total_print_map_num">
+						   
+						     
+						   
+						   <div class="text">Total print map num</div>
+						   <div class="clear"></div>
+						</th>
+						<th scope="col"  class="sortable column-print_map_rate">
+						   
+						     
+						   
+						   <div class="text">Print map rate</div>
+						   <div class="clear"></div>
+						</th>
+						<th scope="col"  class="sortable column-print_map_revenue">
+						   
+						     
+						   
+						   <div class="text">Print map revenue</div>
+						   <div class="clear"></div>
+						</th>
+						<th scope="col"  class="sortable column-total_trace_map_num">
+						   
+						     
+						   
+						   <div class="text">Total trace map num</div>
+						   <div class="clear"></div>
+						</th>
+						<th scope="col"  class="sortable column-trace_map_rate">
+						   
+						     
+						   
+						   <div class="text">Trace map rate</div>
+						   <div class="clear"></div>
+						</th>
+						<th scope="col"  class="sortable column-trace_map_revenue">
+						   
+						     
+						   
+						   <div class="text">Trace map revenue</div>
+						   <div class="clear"></div>
+						</th>
+						<th scope="col"  class="sortable column-field_visit_revenue">
+						   
+						     
+						   
+						   <div class="text">Field visit revenue</div>
+						   <div class="clear"></div>
+						</th>
+						<th scope="col"  class="sortable column-total_revenue">
+						   
+						     
+						   
+						   <div class="text">Total revenue</div>
+						   <div class="clear"></div>
+						</th>
+						</tr>
+						</thead>
+						<tbody>
+
+
+						<tr class="row1">	
+							<th class="field-month">{{instance.month}}</th>
+							<td class="field-total_print_map_num">{{instance.total_print_map_num}}</td>
+							<td class="field-print_map_rate">{{instance.print_map_rate}}</td>
+							<td class="field-print_map_revenue">{{instance.print_map_revenue}}</td>
+							<td class="field-total_trace_map_num">{{instance.total_trace_map_num}}</td>
+							<td class="field-trace_map_rate">{{instance.trace_map_rate}}</td>
+							<td class="field-trace_map_revenue">{{instance.trace_map_revenue}}</td>
+							<td class="field-field_visit_revenue">{{instance.field_visit_revenue}}</td>
+							<td class="field-total_revenue">0</td>
+						</tr>
+
+						</tbody>
+						</table>
+						</div>
+						
+							
+					</div>
+				</div>
+			</div>
+	</div>		
+</div>
+<div class="col-sm-4">{% include 'small_column.html'%}
+</div>
+{% endblock content%}

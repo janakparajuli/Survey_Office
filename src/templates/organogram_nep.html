@@ -1,0 +1,18 @@
+{% extends "index_nep.html"%}
+{% load staticfiles %}
+{% block content %}
+<div class="col-sm-8">
+	<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3><b><p style="text-align:center;"> दरबन्दी चार्ट</p></b></h3>
+						<img src="{% static 'images/Darbandi_nep.png' %}" width="600"/>			
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="col-sm-4">{% include 'small_column_nep.html'%}
+</div>
+{% endblock content %}

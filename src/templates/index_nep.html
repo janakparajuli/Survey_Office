@@ -1,0 +1,42 @@
+{% extends "base/base_nep.html"%}
+{% load staticfiles %}
+{% block content %}
+
+<div class="col-sm-8" >
+	<div class="panel panel-default">
+			<div class="panel-body" style="height:400px; overflow:auto;">
+				<div class="row">
+					<div class="col-xs-12" style="font-family:Times New Roman; text-align:justify;">
+						<h3><b><p style="text-align:center;"> स्वागतम</p></b></h3>
+						<ul class="news-item">
+							<!-- li class="news-item"-->
+								<table cellpadding="4">		
+									<tr>									
+									<td><div class="tab-content text-justify" style="font-family:Helvetica;"><p>नापी कार्यालय, कालीकोटको वेबसाइटमा यहाँहरुलाई स्वागत छ। यस वेवसाइटमा यस कार्यालयबाट प्रदान गरिने सम्पूर्ण सेवाहरुको बारेमा जानकारी प्राप्त गर्न सक्नुहुनेछ। सरकारी कार्यालयबाट प्रदान गरिने सम्पूर्ण सेवाहरु पार्दर्शी हुनुपर्ने मान्यता स्थापित गर्नाका खातिर यस कार्यालयमा हुने सम्पूर्ण कारोबारहरु आर्थिक, नियमित प्रदान गरिने सेवा तथा भइपरि आउने सेवाहरुको जानकारीहरु सम्बन्धित सबैको सूचनाको लागि यस वेवसाइटमा उपलब्ध छन्।</p></div></td>
+									</tr>
+								</table>
+							<!--/li-->
+						</ul><hr/>
+						<h3><b><p style="text-align:center;"> कार्यालय प्रमूखको भनाइ</p></b></h3>
+						<ul class="news-item">
+							<!--li class="news-item"-->
+								<table cellpadding="4">		
+									<tr>					
+									<td><img src="{% static 'images/janak.jpg' %}" width="80" class="img-circle" /></td>
+									<td><div class="tab-content text-justify" style="font-family:Helvetica;"><p>विज्ञान र प्रविधिको चरम विकाससगैँ हामीले पनि अाफ्नो कार्यशैली र क्षमतामा अविवृध्दि गर्नुपर्ने देखिन्छ।  विज्ञान र प्रविधिको बुद्धिमत्तापूर्ण सदुपयोग नै आजको जमानाको माग हो। यस कार्यालयबाट प्रदान गरिने सम्पूर्ण सेवाहरुलाई डिजिटल मैत्री बनाउँदै अनलाइन सेवा प्रवाहमार्फत सेवाग्राहीहरुलाई सुविधा प्रदान गर्ने दिशामा हामी सदा अग्रसर भई लागिपरेका छौँ। आशा गरौँ हामीले योजना बनाए अनुसार काम सम्पन्न गर्न सक्यौँ भने हामी निकट भविष्यमै हाम्रा सम्पूर्ण सेवाहरु कम्प्यूटर प्रविधि मार्फत उपलब्ध हुनेछन्। </p></div></td>
+									</tr>
+								</table>
+							<!--/li-->
+						</ul>						
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="col-sm-4" style="font-family:Times New Roman;">
+	{% include 'small_column_nep.html'%}
+</div>
+<!--</div>
+</div>-->
+
+{% endblock content%}

@@ -1,0 +1,47 @@
+{% extends "base/base.html"%}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="col-sm-8" >
+	<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3><b><p style="text-align:center;"> Search Results</p></b></h3>
+						{% for obj in search_items %}
+						<p style="text-align:justify;">
+							<small>
+							<B><a href="/{{ obj.link }}"> {{ obj.name|escape }}</a>
+							</B>
+							</small>
+						{% endfor %}
+						<div class="pagination">
+						    <span class="step-links">
+						        {% if object_list.has_previous %}
+						            <a href="?{{ page_request_var}}={{ object_list.previous_page_number }}{% if request.GET.search%}&search={{request.GET.search}}{% endif %}">previous</a>
+						        {% endif %}
+
+						        <span class="current">
+						            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+						        </span>
+
+						        {% if object_list.has_next %}
+						            <a href="?{{ page_request_var}}={{ object_list.next_page_number }}{% if request.GET.search %}&search={{request.GET.search}}{% endif %}">next</a>
+						        
+						{% endif %}
+						    </span>
+						</div>
+												
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="col-sm-4" style="background-color: #d9edf7;">
+	{% include 'small_column.html'%}
+</div>
+<!--</div>
+</div>-->
+
+{% endblock content%}

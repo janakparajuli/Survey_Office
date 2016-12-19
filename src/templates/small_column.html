@@ -1,0 +1,24 @@
+{% load staticfiles %}
+	{% block small_column %}
+
+		<div class="list-group">
+  <a href="/notice"><button type="button" class="list-group-item"><b>Notices</b></br></button></a>
+
+  <a href="/news"><button type="button" class="list-group-item"><b>News</b></button></a>
+
+  <a href="/photo_gallery"><button type="button" class="list-group-item"><b>Photo Gallery</b></button></a>
+
+  <a href="{% static "exefiles/AREACALCULATOR.exe" %}"><button type="button" class="list-group-item"><b>Unit Converter</b></button></a>
+
+  <a href="{% static "xlsx/coordinate_converter.xlsx" %}"><button type="button" class="list-group-item"><b>Coordinate Converter</b></button></a>
+
+  <a href="/citizen_charter"><button type="button" class="list-group-item"><b>Citizen Charter</b></button></a>
+
+  <a href="/field_demarcation_revenue"><button type="button" class="list-group-item"><b>Field Demarcation Revenue</b></button></a>
+
+  <a href="{% static "pdf/Land_Act_2019.pdf" %}"><button type="button" class="list-group-item"><b>Land (Survey and Measurement) Act 2019</b></button></a>
+
+  <a href="{% static "pdf/Land_Rules_2058.pdf" %}"><button type="button" class="list-group-item"><b>Land (Survey and Measurement) Rules 2054</b></button></a>
+</div>
+</div>
+{% endblock small_column %}

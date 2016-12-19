@@ -1,0 +1,75 @@
+{% extends "index.html"%}
+{% load staticfiles %}
+{% block breadcrumb %}
+Current Page: <a href="/index">Home</a> &raquo;<a href="">Photo Gallery</a> &raquo; 
+{% endblock %}
+{% block content %}
+<div class="col-sm-8">
+  <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-12" style="font-family:Times New Roman; background-color:rgb(250, 250, 250);">
+            <h3><b><p style="text-align:center;"> View Photos</p></b></h3>
+            
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+              </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <img src="{% static 'images/Sample_Map.jpg' %}" alt="Chania" width="460" height="345"></img>
+                <div class="carousel-caption">
+                  <h3>Sample Map</h3>
+              </div>
+                 <p>This sheet is the parcel map prepared via Plane Table survey.</p>
+              </div>
+
+              <div class="item">
+                <img src="{% static 'images/Planchest.jpg' %}" alt="Chania" width="460" height="345">
+                <div class="carousel-caption">
+                <h3>Planchest</h3>
+              </div>
+                <p>This furniture is used to store Grid Sheets. It has locker system enabling safety.</p>
+              </div>
+
+              <div class="item">
+                <img src="{% static 'images/Map_Arrangement.jpg' %}" alt="Flower" width="460" height="345">
+                <div class="carousel-caption">
+                <h3>Map Arrangement</h3>
+              </div>
+                <p>This is how grid sheets are arranged within a planchest.</p>
+              </div>
+
+              <div class="item">
+                <img src="{% static 'images/Plot_Register_Arrangement.jpg' %}" alt="Flower" width="460" height="345">
+                  <div class="carousel-caption">
+                  <h3>Plot Register Arrangement</h3>
+                </div>
+                  <p>Plot registers are arranged sequentially in a cupboard as shown in the photo.</p>
+              </div>
+              </div>
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>			
+</div>
+<div class="col-sm-4">{% include 'small_column.html'%}
+</div>
+{% endblock content%}

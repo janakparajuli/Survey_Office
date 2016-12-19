@@ -1,0 +1,154 @@
+body {
+    font-family: Helvetica, Arial, Tahoma, sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+/*.row{
+    background-color: rgb(228, 241, 254);
+}*/
+
+.breadcrumb {
+    color:rgb(0,255,0);
+}
+.border {
+	height: 450px;
+}
+
+.page-header {
+    height: 155px;
+}
+
+.welcome_row {
+    min-height: 200px;
+}
+
+.notice_row {
+	background-color: #f99734;
+	min-height: 200px;
+}
+
+.officer_row {
+	min-height: 200px;
+}
+
+.news_row {
+	border: solid black 2px;
+	min-height: 52px;
+}
+
+.gallery_row {
+	border: solid black 2px;
+	min-height: 37px;
+}
+
+.unit_conversion_row {
+	border: solid black 2px;
+	min-height: 37px;
+}
+
+.downloads_row {
+	border: solid black 2px;
+	min-height: 74px;
+}
+
+.organogram_row {
+    border: solid black 2px;
+    min-height: 400px;
+}
+
+.feedbacks_row {
+    min-height: 400px;
+}
+
+.contacts {
+    border: solid black 2px;
+    min-height: 400px;
+}
+
+.widget .heading {
+	text-transform: uppercase;
+    color: #3A678D;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#footer div.wrap {
+    height: 100px;
+    border-top: solid 1px #f99734;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(249, 151, 52);
+    padding: 0px 0 10px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 10px;
+        padding-left: 0px;
+}
+
+.nav-pills > li > a {
+    border-radius: 4px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    width: 160px;
+}
+
+
+.dropdown a:hover{
+    position: relative;
+    color: rgb(1,1,1);
+}
+
+.dropdown a ul {
+    position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+    display:block;
+}
+
+#proHeadline{
+    border-bottom:1px solid #ccc;
+    padding:0px;
+    padding-bottom:5px;
+    min-height:26px;
+    overflow:hidden;
+    font-size:14px;
+}
+#proHeadlineHead{
+    color:#eee;
+    border-right:#bbb 1px solid;
+}
+
+#proHeadlineBody div.proHeadlineDiv{
+    display:none;
+}
+#proHeadlineBody div.proHeadlineDiv span{
+    color:#fff;
+    font-weight:bold;
+}
+#proHeadlineBody div.proHeadlineDiv a{
+    color:#fff;
+}
+
+.glyphicon {
+margin-right: 4px !important; /*override*/
+}
+.pagination .glyphicon {
+margin-right: 0px !important; /*override*/
+}
+.pagination a {
+color: #555;
+}
+.panel ul {
+padding: 0px;
+margin: 0px;
+list-style: none;
+}
+.news-item {
+padding: 2px 2px;
+margin: 0px;
+}

@@ -1,0 +1,39 @@
+{% extends "index.html"%}
+{% load staticfiles %}
+{% block breadcrumb %}
+Current Page: <a href="/index">Home</a> &raquo;<a href="">Introduction</a> &raquo; 
+{% endblock %}
+{% block content %}
+<div class="col-sm-8">
+	<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-12" style="font-family:Times New Roman; text-align:justify;">
+						<h3><b><p style="text-align:center;"> Introduction</p></b></h3>
+						<ul class="news-item">
+							<!-- li class="news-item"-->
+								<table cellpadding="4">		
+									<tr>
+									<td><p><div class="tab-content text-justify"><p>
+											Maps are the base for the efficient planning and management of all development works. To prepare maps indigenously, and to fulfill the various mapping needs of Government, a central mapping agency, the Survey Department was born in B.S. 2014. </p>
+
+										<p>
+											In its early days, the activities of the Survey Department ware focused mainly on cadastral mapping to assist in the collection of land revenue. In B.S. 2019, legislation was passed and revised in B.S. 2021 to allow the Department to prepare maps and Land Registers, which helped not only to assess the revenue, but also to give the individual the right to his land.</p>
+
+										<p>
+											All cadastral mapping works of 75 districts of Nepal was completed throughout the kingdom in B.S. 2055. Out of which 38 districts ware mapped without National Control Network and the remaining 37 districts ware mapped with National Control Network. Therefore, the decision was taken to re-survey the districts for which National Control was not used and also decided to prepare parcel plan in urban areas. The present needs of technology demanded that the old mapping should be repeated and with that concept in mind, cadastral re-mapping works was started in 9 districts (Jhapa, Morang, Parsa, Kathmandu, Rupandehi, Banke, Bardiya, Kailali, Kanchanpur) of the kingdom.</p>
+
+										<p>
+											A Geodetic Survey Branch (previously known as Trigonometrically Survey Branch) was created in B.S. 2026 to help in establishing a network of trigonometrically points or control stations for cadastral mapping works. These control station are now use, not only to tie in various maps to the national control network system, but also, to study the crustal movements of the Himalayas. It is also involved in Geodetic Leveling, Gravity Survey.</p></div></p></td>
+									</tr>
+								</table>
+							<!--/li-->
+						</ul>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="col-sm-4">{% include 'small_column.html'%}
+</div>
+{% endblock%}

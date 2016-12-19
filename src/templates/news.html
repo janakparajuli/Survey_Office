@@ -1,0 +1,19 @@
+{% extends "index.html"%}
+{% block breadcrumb %}
+Current Page: <a href="/index">Home</a> &raquo;<a href="">News</a> &raquo; 
+{% endblock %}
+{% block content %}
+<div class="col-sm-8">
+	<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-xs-12 tab-content text-justify" style="font-family:Times New Roman; background-color:rgb(250, 250, 250);">
+						<b><p style="text-align:center;"> <small>No any news</small></p></b>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="col-sm-4">{% include 'small_column.html'%}
+</div>
+{% endblock content%}

@@ -1,0 +1,238 @@
+{% load staticfiles %}
+
+<html>
+<title>{%block title %}
+	कालीकोट नापी कार्यालय
+	{% endblock %}
+</title>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='{% static "css/bootstrap.min.css" %}' />
+	<link rel='stylesheet' href='{% static "css/bootstrap.theme.min.css" %}' />
+  <link rel='stylesheet' href='{% static "css/main.css" %}' />
+  <link rel='stylesheet' href='{% static "css/site.css" %}' />
+
+  <link rel='stylesheet' href='{% static "django_tables2/themes/paleblue/css/screen.css" %}' />
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/jquery.bootstrap.newsbox.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  
+	
+	
+	<script type="text/javascript">
+tday=new Array("आइतवार","सोमवार","मंगलवार","बुधवार","विहीवार","शुक्रवार","शनिवार");
+tmonth=new Array("वैशाख","ज्ेष्ठ","आषाढ","श्रावण","भाद्र","आश्विन","कार्तिक","मर्ग","पौष","माघ","फाल्गुन","चैत्र");
+/*tdate=new Array(१,२,३,४,५,६,७,८,९,१०,११,१२,१३,१४,१५,१६,१७,१८,१९,२०,२१,२२,२३,२४,२५,२६,२७,२८,२९,३०,३१)*/
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();
+if(nyear<1000) nyear+=1900;
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+
+<script type="text/javascript">
+$(function () {
+$(".demo").bootstrapNews({
+newsPerPage: 4,
+navigation: true,
+autoplay: true,
+direction:'up', // up or down
+animationSpeed: 'normal',
+newsTickerInterval: 4000, //4 secs
+pauseOnHover: true,
+onStop: null,
+onPause: null,
+onReset: null,
+onPrev: null,
+onNext: null,
+onToDo: null
+});
+});
+</script>
+
+	<style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  </style>
+
+
+</head>
+
+<body>
+<header>
+<div class="row" >
+<nav class="navbar navbar-default" style="margin-bottom:0em; padding-top:1em; padding-right:2em; padding-left:2em;  background-color:rgb(228, 241, 254);" >
+    <ul class="nav navbar-nav navbar-left">
+      <li><img src="{% static 'images/National_Emblem.png' %}" alt="flag" class="flag" width="110"></li>       
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><img src="{% static 'images/Nepal_Flag.gif' %}" alt="flag" class="flag" width="70"></li>        
+    </ul> 
+    <p style="text-align:center;">
+    <p style="font-size:20; font-family:Times New Roman; color:rgb(255,0,0); margin-bottom:-1em; margin-top:-1em;">नेपाल सरकार</p><br> 
+        <p style="font-size:20; font-family:Times New Roman; color:rgb(0,0,255); margin-bottom:-1em;">भूमि-सुधार तथा व्यवस्था मन्त्रालय</p><br> 
+        <p style="font-size:20; font-family:Times New Roman; color:rgb(0,0,0); margin-bottom:-1em;">नापी विभाग </p><br>
+          <p style="font-size:20; font-family:Times New Roman; margin-bottom:0em;"><b>नापी कार्यालय, कालीकोट</b></p>       
+    </p>
+</nav>
+</div>
+  </header>
+
+<div class="row">
+  <nav class="navbar navbar-default" style="margin-bottom:0.1em; margin-top:0.1em;">
+    <div class="container-fluid" >
+    <!-- Brand and toggle get grouped for better mobile display -->
+    {% block navbar %}
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                              
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-static-top" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/index_nep"><b>गृहपृष्ठ</b> <span class="sr-only">(current)</span></a></li>        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>हाम्रो बारेमा </b><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/introduction_nep"><b>परिचय</b></a></li>
+              <li><a href="/organogram_nep" id="organogram"><b>दरबन्दी</b></a></li>
+              <li><a href="/budget_nep" id="budget_nep"><b>बजेट</b></a></li>
+              <li><a href="/revenue_nep/" id="revenue_nep"><b>मासिक राजश्व</b></a></li>
+              <li><a href="/major_activities_nep"><b>मूख्य कृयाकलापहरु</b></a></li>
+              <li><a href="/future_plans_nep"><b>आगामी योजनाहरु</b></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>प्रगती विवरण</b> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/products_and_services_nep" id="product_service_nep"><b>हाम्रा सेवाहरु</b></a></li>
+            <li><a href="#" id="monthly_progress"><b>मासिक प्रगती</b></a></li>
+          </ul>
+        </li>
+        <li><a href="/feedbacks_nep"><b>गुनासो</b></a></li>
+        <li><a href="/contacts_nep"><b>कर्मचारी विवरण</b></a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default"><b>खोज्नुहोस्</b></button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/index">English</li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+		
+		<div class="clear"></div>
+</div><!--/.container-fluid -->
+{% endblock navbar%}
+
+<!--<div class="container" id="proHeadline">-->
+<div class="row" style="background-color:rgb(228, 241, 254
+);">
+  <div class="col-sm-3 col-sm-offset-1">
+    {% block breadcrumb %}
+      यो पेज: <a href="/index">गृहपृष्ठ</a> &raquo; 
+    {% endblock breadcrumb %}     
+  </div>
+</div>
+<!--<div class="container" >	-->	
+<div class="row" style="background-color:rgb(228,241,254);">
+  <div class="col-sm-10 col-sm-offset-1" style="margin-bottom: 1em; padding-top: 1em;">
+		{% block content %}
+
+		{% endblock content%}
+		</div>
+	</div>
+
+<!--<div class="container">-->
+<div class="row">
+  <nav class="navbar navbar-default" style="margin-bottom:0.1em; margin-top:0.1em;">
+		<div class="col-sm-12">
+			<div id='footerWidgets'>
+				<div class="col-sm-4">
+			<div class="footer1">
+				<div class='widget'>
+					<p class='heading'>उपयोगी लिङ्कहरु</p>
+					<div class='textWidget'>
+				<a href = "http://www.nepal.gov.np"><p style="font-size:16: font-family:Helvetica;">नेपाल सरकार</p></a><br/>
+				<a href = "http://www.molrm.gov.np/"><p style="font-size:16: font-family:Helvetica;">भूमिसुधार तथा व्यवस्थापन मन्त्रालय</p></a><br/>
+				<a href = "http://dos.gov.np"><p style="font-size:16: font-family:Helvetica;">नापी विभाग</p></a><br/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<div class="col-sm-4">
+				<div class="footer1">
+				<div class='widget'>
+					<p class='heading'>सम्पर्क गर्नुहोस्</p>
+					<div class='textWidget'>
+				<p style="font-size:16: font-family:Helvetica;">नापी कार्यालय, कालीकोट<br/>
+				पो.ब.नं. १२३४ <br/>
+				कर्णाली अञ्चल, नेपाल<br/>
+				फोन नं.: ०८७-४४००१८<br/>
+				इ-मेल: survey.office.kalikot@gmail.com</p><br/>				
+					</div>
+				</div>
+			</div>
+		</div>
+
+			<div class="col-sm-4">
+				<div class="footer1">
+					<div class='widget'>
+						<p class='heading' style="font-size:16: font-family:Helvetica;">अवस्थिती</p>
+							<div class='textWidget'>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1766.4943408367565!2d85.34112127643789!3d27.686744696061503!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1410860078920" style="border:0"> frameborder="0" height="150" width="290"></iframe>				
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p>ट्यागहरु: 
+	    <a href="http://www.dos.gov.np"><span class="label label-info">विभाग</span></a> 
+		<a href="/index"><span class="label label-info">कार्यालय</span></a> 
+		<a href="http://www.molrm.gov.np/"><span class="label label-info">मन्त्रालय</span></a> 
+		<a href="http://www.nepal.gov.np"><span class="label label-info">सरकार</span></a>
+		| <i class="icon-user"></i> <a href="http://127.0.0.1:8000/admin">एड्मिन</a> 
+		</p>
+
+			<marquee style="margin-bottom: 1em; height:6em; background-color:rgb(228,241,254);"><p><i><strong><span id="clockbox"></span></strong></i><br/>वेवसाइट निर्माण गर्ने: ई. जनक पराजुली, नापी अधिकृत। <br/> नापी कार्यालय, कालीकोट</p></marquee>
+	</div>
+  </div>
+</div>
+ 
+</body>
+
+</html>
